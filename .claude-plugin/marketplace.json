@@ -12,7 +12,7 @@
       "name": "nix-progress-bar",
       "source": "./",
       "description": "Progress bar above the message box: time left, steps as pills, an estimate that learns",
-      "version": "2.2.3"
+      "version": "2.2.4"
     }
   ]
 }

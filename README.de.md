@@ -68,6 +68,27 @@ Zusammen mit dem Add-on [nix-checklist-sidebar](https://github.com/nikscz/nix-ch
 
 <img src="docs/overview-both.png" alt="Fortschrittsbalken über dem Eingabefeld, Checkliste rechts" width="100%">
 
+## Datenschutz & Sicherheit
+
+Alles bleibt auf deinem Rechner:
+
+| Liest | Speichert |
+|---|---|
+| Länge und Art deiner Nachricht (kurz / mittel / Arbeitsauftrag) | nur diese Einordnung – nie den Text |
+| Namen der Werkzeuge, die Claude benutzt; bei Terminal-Befehlen den Befehl, nur um Datei-Änderungen zu erkennen | nur die Art (DATA, TERM, WEB, AGENT) – nie den Befehl |
+| Token-Zahl und Dauer jeder Antwort; die Schritte der Checkliste (falls installiert) | Dauern und Arten, in Claude Codes Plugin-Speicher – sonst nichts |
+| Wann Claude dir eine Erlaubnisfrage zeigt | nichts – nur die Uhr hält an |
+
+**Schickt nichts irgendwohin.** Keine Internetverbindung, kein Tracking, keine Statistik – der Code
+enthält gar keine Netzwerkaufrufe. Er ist offen und kurz, jeder kann das nachprüfen.
+
+Zwei Dinge, die man wissen sollte:
+
+- **Sprach-Check:** Einmal pro Chat läuft ein harmloser Systembefehl, der deine Systemsprache liest –
+  `defaults read -g AppleLanguages` auf dem Mac, `(Get-Culture).TwoLetterISOLanguageName` in PowerShell unter Windows.
+- **Anweisungen an Claude:** Das Tool gibt Claude ein paar Zeilen mit (z. B. wie es das Tool benutzt, und den
+  einmaligen Danke-Satz). Nachlesen kannst du sie im Code.
+
 > [!WARNING]
 > **Frühe Version – Updates kommen.** Diese Art Erweiterung ist bei Claude Code noch ganz neu.
 > Nach einem Update von Anthropic kann etwas nicht mehr funktionieren, bis hier ein Fix kommt.

@@ -116,3 +116,20 @@ test('english, deutsch and auto switch the language without hiding the bar', asy
   expect(await cmd('auto')).toBe('Folgt wieder der Systemsprache.')
   expect(await cmd('')).toBe('Fortschrittsleiste eingeblendet.')
 })
+
+test('a terminal command that writes files lights DATA as well as TERM', async ($, on) => {
+  mock.clock(on, { now: T0 })
+  mock.store(on)
+  on('turn.start', (_, e) => ({ turnId: e.turnId }))
+  on('tool.call', { tool: 'Bash' }, () => ({ result: { stdout: '', stderr: '', interrupted: false } }) as never)
+  await $.turn.start({ text: 'räum den Ordner auf und verschiebe die Bilder', turnId: 'b1' })
+  await $.tool.call({ tool: 'Bash', command: 'mv a.png bilder/' } as never)
+  const ui = await $.ui.mount({
+    plugin: 'nix-progress-bar',
+    surface: 'desktop',
+    component: 'AbovePrompt',
+    props: { hasSurvey: false, bodyColumns: 80 } as never,
+  })
+  // The labels' description says which kinds of work were used
+  expect(JSON.stringify(await ui.find({ type: 'Svg' }))).toContain('DATA: used')
+})

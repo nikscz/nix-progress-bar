@@ -373,7 +373,8 @@ export const register: Register = on => {
 
   // Laufendes Tool: Kategorie-Labels aufleuchten lassen; das erste Werkzeug schaltet auf die Arbeits-Vergleichsmenge
   on('tool.call', async ($, e, next) => {
-    const cats = categoriesOf(e.tool, (e as { input?: unknown }).input)
+    // The tool's arguments ride on e itself (a Bash call's `command`)
+    const cats = categoriesOf(e.tool, e)
     const before = await $.state.get(REF)
     const p = upgrade(before.value)
     if (p && p.doneMs === null) {

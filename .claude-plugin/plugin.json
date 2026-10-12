@@ -1,6 +1,6 @@
 {
   "name": "nix-progress-bar",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "Progress bar above the message box: time left, steps as pills, an estimate that learns",
   "types": "./types/index.d.ts",
   "author": {

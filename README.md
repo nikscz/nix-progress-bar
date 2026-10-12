@@ -64,6 +64,27 @@ Together with the add-on [nix-checklist-sidebar](https://github.com/nikscz/nix-c
 
 <img src="docs/overview-both.png" alt="Progress bar above the message box, checklist on the right" width="100%">
 
+## Privacy & security
+
+Everything stays on your computer:
+
+| Reads | Stores |
+|---|---|
+| The length and kind of your message (short / medium / long work request) | only that class – never the text |
+| Names of the tools Claude uses; for terminal commands the command, only to tell file changes apart | only the kind (DATA, TERM, WEB, AGENT) – never the command |
+| Token count and duration of each answer; the checklist's steps (if installed) | durations and kinds, in Claude Code's plugin storage – nothing else |
+| When Claude shows you a permission prompt | nothing – the clock just stops |
+
+**Sends nothing anywhere.** No internet connection, no tracking, no analytics – the code has no
+network calls at all. It is open and short, so anyone can check.
+
+Two things worth knowing:
+
+- **Language check:** once per chat it runs one harmless system command to read your system language –
+  `defaults read -g AppleLanguages` on a Mac, `(Get-Culture).TwoLetterISOLanguageName` in PowerShell on Windows.
+- **Instructions for Claude:** it adds a few lines to Claude's context (e.g. how to use the tool, and the
+  one-time thank-you). You can read them in the code.
+
 > [!WARNING]
 > **Early version – updates will come.** This kind of extension is still brand new in Claude Code.
 > After an update from Anthropic something may stop working until a fix lands here.
