@@ -94,7 +94,15 @@ test('the command hides the bar and shows it again', async ($, on) => {
   mock.store(on)
   on('turn.start', (_, e) => ({ turnId: e.turnId }))
   on('ui.render', () => ({ tree: null }) as never)
+  // A German Mac
+  on('process.run', () => ({ value: { exitCode: 0, stdout: '(\n    "de-DE"\n)', stderr: '' } }) as never)
   const run = async () => (await $.command.run({ command: 'nix-progress-bar', args: '' } as never)).text
   expect(await run()).toBe('Fortschrittsleiste ausgeblendet.')
   expect(await run()).toBe('Fortschrittsleiste eingeblendet.')
+})
+
+test('on an English system the command answers in English', async ($, on) => {
+  mock.store(on)
+  const run = async () => (await $.command.run({ command: 'nix-progress-bar', args: '' } as never)).text
+  expect(await run()).toBe('Progress bar hidden.')
 })

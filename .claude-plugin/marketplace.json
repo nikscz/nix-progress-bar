@@ -5,14 +5,14 @@
     "url": "https://github.com/nikscz"
   },
   "metadata": {
-    "description": "Fortschrittsleiste über dem Eingabefeld: Restzeit, Schritte als Pills, lernende Schätzung"
+    "description": "Progress bar above the message box: time left, steps as pills, an estimate that learns"
   },
   "plugins": [
     {
       "name": "nix-progress-bar",
       "source": "./",
-      "description": "Fortschrittsleiste über dem Eingabefeld: Restzeit, Schritte als Pills, lernende Schätzung",
-      "version": "2.1.0"
+      "description": "Progress bar above the message box: time left, steps as pills, an estimate that learns",
+      "version": "2.2.0"
     }
   ]
 }

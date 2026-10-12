@@ -1,7 +1,7 @@
 {
   "name": "nix-progress-bar",
-  "version": "2.1.0",
-  "description": "Fortschrittsleiste über dem Eingabefeld: Restzeit, Schritte als Pills, lernende Schätzung",
+  "version": "2.2.0",
+  "description": "Progress bar above the message box: time left, steps as pills, an estimate that learns",
   "types": "./types/index.d.ts",
   "author": {
     "name": "nikscz",
