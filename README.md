@@ -4,7 +4,7 @@
 
 **How long will Claude take? A slim bar above the message box tells you.**
 
-<img src="docs/overview-bar.png" alt="The progress bar above the message box in Claude" width="100%">
+<img src="docs/demo-en.gif" alt="The progress bar above the message box in Claude" width="100%">
 
 ## The problem
 
@@ -62,7 +62,7 @@ Done – duration, tokens and how far off the estimate was:
 
 Together with the add-on [nix-checklist-sidebar](https://github.com/nikscz/nix-checklist-sidebar):
 
-<img src="docs/overview-both.png" alt="Progress bar above the message box, checklist on the right" width="100%">
+<img src="docs/both-en.gif" alt="Progress bar above the message box, checklist on the right" width="100%">
 
 ## Privacy & security
 

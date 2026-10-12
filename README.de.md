@@ -4,7 +4,7 @@
 
 **Wie lange braucht Claude noch? Ein schlanker Balken über dem Eingabefeld sagt es dir.**
 
-<img src="docs/overview-bar.png" alt="Der Fortschrittsbalken über dem Eingabefeld in Claude" width="100%">
+<img src="docs/demo-de.gif" alt="Der Fortschrittsbalken über dem Eingabefeld in Claude" width="100%">
 
 ## Das Problem
 
@@ -66,7 +66,7 @@ Fertig – Dauer, Tokens und wie weit die Schätzung danebenlag:
 
 Zusammen mit dem Add-on [nix-checklist-sidebar](https://github.com/nikscz/nix-checklist-sidebar):
 
-<img src="docs/overview-both.png" alt="Fortschrittsbalken über dem Eingabefeld, Checkliste rechts" width="100%">
+<img src="docs/both-de.gif" alt="Fortschrittsbalken über dem Eingabefeld, Checkliste rechts" width="100%">
 
 ## Datenschutz & Sicherheit
 
