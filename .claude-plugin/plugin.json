@@ -1,0 +1,12 @@
+{
+  "name": "nix-progress-bar",
+  "version": "2.0.0",
+  "description": "Fortschrittsleiste über dem Eingabefeld: Restzeit, Schritte als Pills, lernende Schätzung",
+  "types": "./types/index.d.ts",
+  "author": {
+    "name": "nikscz",
+    "url": "https://github.com/nikscz"
+  },
+  "repository": "https://github.com/nikscz/nix-progress-bar",
+  "license": "MIT"
+}
