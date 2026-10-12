@@ -4,6 +4,8 @@
 
 **How long will Claude take? A slim bar above the message box tells you.**
 
+<img src="docs/overview-bar.png" alt="The progress bar above the message box in Claude" width="100%">
+
 ## The problem
 
 Claude is working and you don't know: ten seconds or five minutes? Time to grab a coffee? Claude Code only shows *that* it is working – not how much longer.
@@ -47,6 +49,20 @@ No GitHub account needed.
 With [nix-checklist-sidebar](https://github.com/nikscz/nix-checklist-sidebar) the bar shows Claude's
 steps as **pills**, and the estimate follows the pace of the steps already done – much more precise.
 Without the add-on the bar works just the same, only without pills.
+
+## Screenshots
+
+Working – time left, steps as pills, estimated total:
+
+<img src="docs/band-running.png" alt="Progress bar while Claude works" width="100%">
+
+Done – duration, tokens and how far off the estimate was:
+
+<img src="docs/band-done.png" alt="Progress bar when Claude is done" width="100%">
+
+Together with the add-on [nix-checklist-sidebar](https://github.com/nikscz/nix-checklist-sidebar):
+
+<img src="docs/overview-both.png" alt="Progress bar above the message box, checklist on the right" width="100%">
 
 > [!WARNING]
 > **Early version – updates will come.** This kind of extension is still brand new in Claude Code.

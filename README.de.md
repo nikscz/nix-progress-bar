@@ -4,6 +4,8 @@
 
 **Wie lange braucht Claude noch? Ein schlanker Balken über dem Eingabefeld sagt es dir.**
 
+<img src="docs/overview-bar.png" alt="Der Fortschrittsbalken über dem Eingabefeld in Claude" width="100%">
+
 ## Das Problem
 
 Claude arbeitet, und du weißt nicht: Dauert das zehn Sekunden oder fünf Minuten? Lohnt sich ein Kaffee? Claude Code zeigt nur, *dass* gearbeitet wird – nicht, wie lange noch.
@@ -47,6 +49,24 @@ Kein GitHub-Konto nötig.
 Mit [nix-checklist-sidebar](https://github.com/nikscz/nix-checklist-sidebar) dazu zeigt der Balken
 Claudes Schritte als **Pills**, und die Schätzung rechnet mit dem Tempo der schon erledigten Schritte
 weiter – deutlich genauer. Ohne das Add-on funktioniert der Balken genauso, nur ohne Pills.
+
+## Screenshots
+
+Bei der Arbeit – Restzeit, Schritte als Pills, geschätzte Gesamtdauer:
+
+<img src="docs/band-running.png" alt="Fortschrittsbalken, während Claude arbeitet" width="100%">
+
+Claude wartet auf dich – die Uhr steht:
+
+<img src="docs/band-waiting-de.png" alt="Fortschrittsbalken: wartet auf dich" width="100%">
+
+Fertig – Dauer, Tokens und wie weit die Schätzung danebenlag:
+
+<img src="docs/band-done.png" alt="Fortschrittsbalken, wenn Claude fertig ist" width="100%">
+
+Zusammen mit dem Add-on [nix-checklist-sidebar](https://github.com/nikscz/nix-checklist-sidebar):
+
+<img src="docs/overview-both.png" alt="Fortschrittsbalken über dem Eingabefeld, Checkliste rechts" width="100%">
 
 > [!WARNING]
 > **Frühe Version – Updates kommen.** Diese Art Erweiterung ist bei Claude Code noch ganz neu.
