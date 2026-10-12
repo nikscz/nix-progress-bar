@@ -12,7 +12,7 @@
       "name": "nix-progress-bar",
       "source": "./",
       "description": "Fortschrittsleiste über dem Eingabefeld: Restzeit, Schritte als Pills, lernende Schätzung",
-      "version": "2.0.0"
+      "version": "2.1.0"
     }
   ]
 }

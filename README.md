@@ -24,10 +24,15 @@ Ein dezenter Balken über dem Eingabefeld:
 - Die Schätzung **lernt mit jeder Antwort** – in beide Richtungen, ohne pauschalen Aufschlag.
 - Wartet Claude auf dich (Erlaubnis, Rückfrage), steht dort **„wartet auf dich“** und die
   Uhr hält an.
-- Mit [nix-checklist-sidebar](https://github.com/nikscz/nix-checklist-sidebar): die Schritte
-  als **Pills**, und die Schätzung rechnet mit dem Tempo der erledigten Schritte weiter.
 
 **Befehl:** `/nix-progress-bar` blendet den Balken aus und wieder ein.
+
+### Add-on: nix-checklist-sidebar
+
+Mit [nix-checklist-sidebar](https://github.com/nikscz/nix-checklist-sidebar) dazu zeigt der
+Balken Claudes Schritte als **Pills**, und die Schätzung rechnet mit dem Tempo der schon
+erledigten Schritte weiter – deutlich genauer. Ohne das Add-on funktioniert der Balken genauso,
+nur ohne Pills.
 
 Gespeichert werden nur gelernte Zeiten, in Claude Codes eigenem Plugin-Speicher.
 
