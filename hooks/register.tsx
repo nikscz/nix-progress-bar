@@ -2,7 +2,7 @@ import type { EngineInterface, Register } from 'claude-code'
 
 import type { Category, ChecklistItem, Progress, PromptClass, StepSample, TimeMode } from '../types'
 
-import { ASK_LANG, langOf } from './lang'
+import { ASK_LANG, SWITCHED, chosenLang, langOf } from './lang'
 import type { Lang } from './lang'
 import { learnSteps, planEstimate, waitedMs } from './plan'
 
@@ -236,7 +236,12 @@ const systemLang = async ($: EngineInterface): Promise<Lang> => {
   const env = (await $.env.get('LC_ALL').catch(() => undefined)) || (await $.env.get('LANG').catch(() => undefined))
   return (env && langOf(env)) || 'en'
 }
-const langOf$ = ($: EngineInterface) => (asked ??= systemLang($))
+// A language picked with the command wins over the system's.
+const LANG_KEY = 'language'
+const langOf$ = async ($: EngineInterface): Promise<Lang> => {
+  const picked = await $.store.get(LANG_KEY).catch(() => undefined)
+  return picked === 'de' || picked === 'en' ? picked : (asked ??= systemLang($))
+}
 
 export const register: Register = on => {
 
@@ -291,12 +296,23 @@ export const register: Register = on => {
     $.ui.status(undefined)
     await $.state.set(TIME_REF, toTimeMode(await $.store.get(TIME_KEY)))
     await $.state.set(HIDDEN_REF, (await $.store.get(HIDDEN_KEY)) === true)
-    await $.command.register({ name: COMMAND, description: WORDS[await systemLang($)].toggle, immediate: true })
+    await $.command.register({
+      name: COMMAND,
+      description: WORDS[await systemLang($)].toggle,
+      argumentHint: '[english | deutsch | auto]',
+      immediate: true,
+    })
     return next(e)
   })
 
   // Ein- und ausblenden, gemerkt über alle Chats
-  on('command.run', { command: COMMAND }, async $ => {
+  on('command.run', { command: COMMAND }, async ($, e) => {
+    const picked = chosenLang(e.args)
+    if (picked !== null) {
+      if (picked === 'auto') await $.store.delete(LANG_KEY)
+      else await $.store.set(LANG_KEY, picked)
+      return { text: SWITCHED[picked][await langOf$($)] }
+    }
     const isHidden = !((await $.state.get(HIDDEN_REF)).value === true)
     await $.state.set(HIDDEN_REF, isHidden)
     await $.store.set(HIDDEN_KEY, isHidden)

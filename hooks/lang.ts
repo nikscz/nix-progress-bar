@@ -14,3 +14,19 @@ export function langOf(text: string): Lang | null {
   const code = text.match(/[a-z]{2}/i)?.[0]?.toLowerCase()
   return code === undefined ? null : code === 'de' ? 'de' : 'en'
 }
+
+/** A language the person picks by hand ("english", "deutsch", …); "auto" means the system's; null when it is neither */
+export function chosenLang(word: string): Lang | 'auto' | null {
+  const w = word.trim().toLowerCase()
+  if (['english', 'englisch', 'en'].includes(w)) return 'en'
+  if (['deutsch', 'german', 'de'].includes(w)) return 'de'
+  if (['auto', 'system'].includes(w)) return 'auto'
+  return null
+}
+
+/** The answer to a language switch, in the language just chosen */
+export const SWITCHED: Record<Lang | 'auto', Record<Lang, string>> = {
+  en: { en: 'Now in English.', de: 'Now in English.' },
+  de: { en: 'Jetzt auf Deutsch.', de: 'Jetzt auf Deutsch.' },
+  auto: { en: 'Follows the system language again.', de: 'Folgt wieder der Systemsprache.' },
+}

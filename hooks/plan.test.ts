@@ -106,3 +106,13 @@ test('on an English system the command answers in English', async ($, on) => {
   const run = async () => (await $.command.run({ command: 'nix-progress-bar', args: '' } as never)).text
   expect(await run()).toBe('Progress bar hidden.')
 })
+
+test('english, deutsch and auto switch the language without hiding the bar', async ($, on) => {
+  mock.store(on)
+  on('process.run', () => ({ value: { exitCode: 0, stdout: '(\n    "de-DE"\n)', stderr: '' } }) as never)
+  const cmd = async (args: string) => (await $.command.run({ command: 'nix-progress-bar', args } as never)).text
+  expect(await cmd('english')).toBe('Now in English.')
+  expect(await cmd('')).toBe('Progress bar hidden.')
+  expect(await cmd('auto')).toBe('Folgt wieder der Systemsprache.')
+  expect(await cmd('')).toBe('Fortschrittsleiste eingeblendet.')
+})

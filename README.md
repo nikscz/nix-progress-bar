@@ -34,11 +34,13 @@ No GitHub account needed.
 - The estimate **learns with every answer** – both ways, no flat buffer added.
 - When Claude waits for you (permission, question), it says **"waiting for you"** and the clock stops.
 - Only learned times are stored, in Claude Code's own plugin storage.
-- Follows your system language (German or English).
+- Follows your system language (German or English) – or one you pick.
 
 | Command | What happens |
 |---|---|
 | `/nix-progress-bar` | hides the bar and shows it again |
+| `/nix-progress-bar english` / `deutsch` | fixed language for the bar |
+| `/nix-progress-bar auto` | follows the system language again |
 
 ### Add-on: nix-checklist-sidebar
 
@@ -63,10 +65,10 @@ Or by hand, whenever you like:
 
 ### What's new
 
-**2.2.0 – German and English.** The tool's own labels now follow your system language: German
-on a German system, English everywhere else. Other languages (e.g. Spanish) get the English labels –
-but everything Claude writes itself (the steps, the thank-you, its answers) comes in your language
-anyway.
+**2.2 – German and English.** The tool's own labels follow your system language: German on a
+German system, English everywhere else – or pick it yourself with `/nix-progress-bar english`, `deutsch` or
+`auto`. Other languages (e.g. Spanish) get the English labels – but everything Claude writes itself
+(the steps, the thank-you, its answers) comes in your language anyway.
 
 ## Uninstall
 

@@ -34,11 +34,13 @@ Kein GitHub-Konto nötig.
 - Die Schätzung **lernt mit jeder Antwort** – in beide Richtungen, ohne pauschalen Aufschlag.
 - Wartet Claude auf dich (Erlaubnis, Rückfrage), steht dort **„wartet auf dich“** und die Uhr hält an.
 - Gespeichert werden nur gelernte Zeiten, in Claude Codes eigenem Plugin-Speicher.
-- Folgt deiner Systemsprache (Deutsch oder Englisch).
+- Folgt deiner Systemsprache (Deutsch oder Englisch) – oder einer Sprache, die du festlegst.
 
 | Befehl | Was passiert |
 |---|---|
 | `/nix-progress-bar` | blendet den Balken aus und wieder ein |
+| `/nix-progress-bar english` / `deutsch` | feste Sprache für den Balken |
+| `/nix-progress-bar auto` | folgt wieder der Systemsprache |
 
 ### Add-on: nix-checklist-sidebar
 
@@ -63,10 +65,10 @@ Oder von Hand, wann immer du willst:
 
 ### Neu
 
-**2.2.0 – Deutsch und Englisch.** Die festen Wörter des Tools folgen jetzt deiner Systemsprache:
-Deutsch auf einem deutschen System, sonst Englisch. Andere Sprachen (z. B. Spanisch) bekommen die
-englischen Wörter – alles, was Claude selbst schreibt (die Schritte, der Danke-Satz, die Antworten),
-kommt aber ohnehin in deiner Sprache.
+**2.2 – Deutsch und Englisch.** Die festen Wörter des Tools folgen deiner Systemsprache: Deutsch auf
+einem deutschen System, sonst Englisch – oder du wählst selbst mit `/nix-progress-bar english`, `deutsch`
+oder `auto`. Andere Sprachen (z. B. Spanisch) bekommen die englischen Wörter – alles, was Claude
+selbst schreibt (die Schritte, der Danke-Satz, die Antworten), kommt aber ohnehin in deiner Sprache.
 
 ## Deinstallieren
 
